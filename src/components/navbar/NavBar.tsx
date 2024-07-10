@@ -1,10 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../contexts/AuthContext'
 
 
 function Navbar() {
+
+  let navigate = useNavigate()
+
+  const { cliente, handleLogout } = useContext(AuthContext)
  
-  
+  function logout() {
+    handleLogout()
+    alert('Usuário deslogado com sucesso')
+    navigate('/')
+}
 
   return (
     <>
@@ -18,8 +27,10 @@ function Navbar() {
               <div className='hover:underline'>Categorias</div>
               <Link to='/contato' className='hover:underline'>Contato</Link>
               <Link to='/sobre' className='hover:underline'>Sobre Nós</Link>
+              <Link to='/setoratuacao' className='hover:underline'>Setores de Atuação</Link>
+              <Link to='/cadastroSetorAtuacao' className='hover:underline'>Cadastrar Setor</Link>
               <div className='hover:underline'>Perfil</div>
-              <div className='hover:underline'>Sair</div>
+              <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
             </div>
           </div>
         </div>
