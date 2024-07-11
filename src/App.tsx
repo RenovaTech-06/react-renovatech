@@ -32,7 +32,7 @@ function App() {
               <Route path="/cadastroSetorAtuacao" element={<FormularioSetor />} />
               <Route path="/editarSetorAtuacao/:id" element={<FormularioSetor />} />
               <Route path="/deletarSetorAtuacao/:id" element={<DeletarSetorAtuacao />} />
-              <Route path="/servicos/" element={<ListaServicos/>} />
+              <Route path="/servicos" element={<ListaServicos/>} />
               <Route path="/cadastroServico" element={<FormularioSetor />} />
               <Route path="/deletarServico/:id" element={<DeletarServico />} />
               <Route path="/editarServico/:id" element={<FormularioServico />} />
