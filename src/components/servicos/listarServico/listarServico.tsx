@@ -14,12 +14,12 @@ function ListaServicos() {
   const { cliente, handleLogout } = useContext(AuthContext);
   const token = cliente.token;
 
-  useEffect(() => {
-    if (token === '') {
-      alert('Você precisa estar logado');
-      navigate('/login');
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (token === '') {
+  //     alert('Você precisa estar logado');
+  //     navigate('/login');
+  //   }
+  // }, [token]);
 
   async function buscarServico() {
     try {

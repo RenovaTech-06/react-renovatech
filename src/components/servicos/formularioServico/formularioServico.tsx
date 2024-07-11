@@ -89,10 +89,10 @@ function FormularioServico() {
   }
 
   function retornar() {
-    navigate('/setoratuacao');
+    navigate('/servicos');
   }
 
-  async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
+  async function gerarNovaServico(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
     console.log({ servico });
@@ -140,9 +140,22 @@ function FormularioServico() {
     <div className="container flex flex-col mx-auto items-center">
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Serviços' : 'Cadastrar Serviços'}</h1>
 
-      <form onSubmit={gerarNovaPostagem} className="flex flex-col w-1/2 gap-4">
+      <form onSubmit={gerarNovaServico} className="flex flex-col w-1/2 gap-4">
+        
+      <div className="flex flex-col gap-2">
+          <label htmlFor="foto">Imagem do serviço</label>
+          <input
+            value={servico.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="text"
+            placeholder="Adicione uma imagem que defina seu serviço"
+            name="foto"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Contato do serviço</label>
+          <label htmlFor="contato">Contato do serviço</label>
           <input
             value={servico.contato}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -154,7 +167,7 @@ function FormularioServico() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Texto do Servico</label>
+          <label htmlFor="descricao">Texto do Servico</label>
           <input
             value={servico.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -171,7 +184,7 @@ function FormularioServico() {
             <option value="" selected disabled>Selecione um Setor de Atuação</option>
             {setorAtuacoes.map((setorAtuacao) => (
               <>
-                <option value={setorAtuacao.id} >{setorAtuacao.descricao}</option>
+                <option value={setorAtuacao.id} >{setorAtuacao.nome}</option>
               </>
             ))}
           </select>
