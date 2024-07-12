@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import ModalServico from '../../components/servicos/modalServico/ModalServico';
+import ListaServicos from '../../components/servicos/listarServico/listarServico';
 
 
 function Home() {
@@ -25,6 +26,8 @@ function Home() {
       </div>
     </div>
   </div>
+  
+  <ListaServicos/>
         
         
       </>
