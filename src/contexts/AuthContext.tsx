@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState } from "react"
 
 import { login } from "../services/Service"
 import ClienteLogin from "../models/ClienteLogin"
+import { toastAlerta } from "../util/toastAlerta"
 
 interface AuthContextProps {
     cliente: ClienteLogin
@@ -34,12 +35,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(true)
         try {
             await login(`/clientes/logar`, userLogin, setCliente)
-            alert("Cliente logado com sucesso")
+            toastAlerta('Cliente logado com sucesso','sucesso')
             setIsLoading(false)
 
         } catch (error) {
             console.log(error)
-            alert("Dados do cliente inconsistentes")
+            toastAlerta('Dados do cliente inconsistentes','erro')
             setIsLoading(false)
         }
     }

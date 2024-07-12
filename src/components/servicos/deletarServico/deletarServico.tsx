@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Servicos from '../../../models/Servicos'
 import { buscar, deletar } from '../../../services/Service'
+import { toastAlerta } from '../../../util/toastAlerta'
 
 function DeletarServico() {
   const [servico, setServico] = useState<Servicos>({} as Servicos)
@@ -23,7 +24,7 @@ function DeletarServico() {
       })
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente','info')
         handleLogout()
       }
     }
@@ -31,7 +32,7 @@ function DeletarServico() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado')
+      toastAlerta('Você precisa estar logado','info')
       navigate('/login')
     }
   }, [token])
@@ -54,10 +55,10 @@ function DeletarServico() {
         }
       })
 
-      alert('Servico apagada com sucesso')
+      toastAlerta('Postagem apagada com sucesso', 'sucesso')
 
     } catch (error) {
-      alert('Erro ao apagar a Servico')
+      toastAlerta('Erro ao apagar a Postagem', 'erro')
     }
 
     retornar()

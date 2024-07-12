@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Cliente from "../../models/Cliente"
 import { cadastrarCliente } from "../../services/Service"
+import { toastAlerta } from "../../util/toastAlerta"
 
 function Cadastro() {
 
@@ -55,14 +56,14 @@ function Cadastro() {
   
         try {
           await cadastrarCliente(`/clientes/cadastrar`, cliente, setClienteResposta)
-          alert('Cliente cadastrado com sucesso')
+          toastAlerta('Cliente cadastrado com sucesso','sucesso')
   
         } catch (error) {
-          alert('Erro ao cadastrar o Cliente')
+          toastAlerta('Erro ao cadastrar o Cliente','erro')
         }
   
       } else {
-        alert('Dados inconsistentes. Verifique as informações de cadastro.')
+        toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.','erro')
         setCliente({ ...cliente, senha: "" }) 
         setConfirmaSenha("")                
       }

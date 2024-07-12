@@ -3,6 +3,7 @@ import SetorAtuacao from '../../../models/SetorAtuacao'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import { buscar, deletar } from '../../../services/Service'
+import { toastAlerta } from '../../../util/toastAlerta'
 
 function DeletarSetorAtuacao() {
 
@@ -24,7 +25,7 @@ function DeletarSetorAtuacao() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                toastAlerta('O token expirou, favor logar novamente','info')
                 handleLogout()
             }
         }
@@ -32,7 +33,7 @@ function DeletarSetorAtuacao() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('Você precisa estar logado','info')
             navigate('/login')
         }
     }, [token])
@@ -55,10 +56,10 @@ function DeletarSetorAtuacao() {
                 }
             })
 
-            alert('Setor de Atuação apagado com sucesso')
+            toastAlerta('Setor de Atuação apagado com sucesso','sucesso')
 
         } catch (error) {
-            alert('Erro ao apagar o Setor')
+            toastAlerta('Erro ao apagar o Setor','erro')
         }
 
         retornar()

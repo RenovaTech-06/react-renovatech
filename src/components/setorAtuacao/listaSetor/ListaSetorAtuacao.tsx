@@ -3,8 +3,9 @@ import SetorAtuacao from '../../../models/SetorAtuacao';
 import { useNavigate } from 'react-router-dom';
 import { buscar } from '../../../services/Service';
 import { AuthContext } from '../../../contexts/AuthContext';
-import { Dna } from 'react-loader-spinner';
+import { ThreeCircles } from 'react-loader-spinner';
 import CardSetorAtuacao from '../cardSetor/CardSetorAtuacao';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 function ListaSetorAtuacao() {
 
@@ -22,7 +23,7 @@ function ListaSetorAtuacao() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente','info')
         handleLogout()
       }
     }
@@ -30,7 +31,7 @@ function ListaSetorAtuacao() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado','info');
       navigate('/login');
     }
   }, [token]);
@@ -43,15 +44,18 @@ function ListaSetorAtuacao() {
   return (
     <>
         {setorAtuacao.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <ThreeCircles
+        visible={true}
+        height="150"
+        width="150"
+        color="#4fa94d"
+        ariaLabel="three-circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+  />
+  </div>
+)}
 
       <div className=" py-4 max-w-xl mx-auto text-center xl:max-w-2xl">
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">We are just
