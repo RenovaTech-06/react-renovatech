@@ -3,6 +3,7 @@ import SetorAtuacao from '../../../models/SetorAtuacao';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 function FormularioSetor() {
 
@@ -49,15 +50,15 @@ function FormularioSetor() {
             }
           })
   
-          alert('Setor Atualizado com sucesso')
+          toastAlerta('Setor Atualizado com sucesso','sucesso')
           retornar()
   
         } catch (error: any) {
           if (error.toString().includes('403')) {
-            alert('O token expirou, favor logar novamente')
+            toastAlerta('O token expirou, favor logar novamente','info')
             handleLogout()
           } else {
-            alert('Erro ao atualizar o Setor de Atuação')
+            toastAlerta('Erro ao atualizar o Setor de Atuação','erro')
           }
   
         }
@@ -70,14 +71,14 @@ function FormularioSetor() {
             }
           })
   
-          alert('Setor de Atuação cadastrado com sucesso')
+          toastAlerta('Setor de Atuação cadastrado com sucesso','sucesso')
   
         } catch (error: any) {
           if (error.toString().includes('403')) {
-            alert('O token expirou, favor logar novamente')
+            toastAlerta('O token expirou, favor logar novamente','info')
             handleLogout()
           } else {
-            alert('Erro ao cadastrar o Setor de Atuação')
+            toastAlerta('Erro ao cadastrar o Setor de Atuação','erro')
           }
         }
       }
@@ -91,7 +92,7 @@ function FormularioSetor() {
   
     useEffect(() => {
       if (token === '') {
-        alert('Você precisa estar logado');
+        toastAlerta('Você precisa estar logado','info');
         navigate('/login');
       }
     }, [token]);

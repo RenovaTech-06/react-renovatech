@@ -15,11 +15,16 @@ import ListaServicos from './components/servicos/listarServico/listarServico'
 import FormularioServico from './components/servicos/formularioServico/formularioServico'
 import DeletarServico from './components/servicos/deletarServico/deletarServico'
 import Perfil from './pages/perfil/Perfil'
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import { ToastContainer } from 'react-toastify'
+
 
 function App() {
   return (
     <>
     <AuthProvider>
+    <ToastContainer />
       <BrowserRouter>
         <Navbar />
           <div className='min-h-[80vh]'>

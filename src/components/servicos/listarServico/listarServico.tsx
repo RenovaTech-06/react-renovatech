@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+import { ThreeCircles } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Servicos from '../../../models/Servicos';
 import { buscar } from '../../../services/Service';
 import CardServicos from '../cardServicos/CardServicos';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 function ListaServicos() {
   const [servicos, setServicos] = useState<Servicos[]>([]);
@@ -30,7 +31,7 @@ function ListaServicos() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente','info')
         handleLogout()
       }
     }
@@ -43,14 +44,17 @@ function ListaServicos() {
   return (
     <>
       {servicos.length === 0 && (
-        <Dna
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <ThreeCircles
           visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
+          height="150"
+          width="150"
+          color="#4fa94d"
+          ariaLabel="three-circles-loading"
           wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
+          wrapperClass=""
+          />    
+          </div> 
       )}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {servicos.map((servico) => (

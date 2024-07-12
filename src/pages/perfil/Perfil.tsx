@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import loginLogo from '../../assets/logo-renovatech.png';
+import { toastAlerta } from '../../util/toastAlerta';
 
 function Perfil() {
   let navigate = useNavigate();
@@ -10,7 +11,7 @@ function Perfil() {
 
   useEffect(() => {
     if (cliente.token === "") {
-      alert('Dados inconsistentes. Verifique as informações de cadastro.');
+      toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.','erro');
       navigate("/login");
     }
   }, [cliente.token, navigate]);

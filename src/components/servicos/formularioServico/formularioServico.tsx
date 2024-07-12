@@ -4,7 +4,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Servicos from '../../../models/Servicos';
 import SetorAtuacao from '../../../models/SetorAtuacao';
 import { buscar, atualizar, cadastrar } from '../../../services/Service';
-
+import { toastAlerta } from '../../../util/toastAlerta';
 
 function FormularioServico() {
   let navigate = useNavigate();
@@ -58,7 +58,7 @@ function FormularioServico() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado','info');
       navigate('/login');
     }
   }, [token]);
@@ -66,9 +66,8 @@ function FormularioServico() {
   useEffect(() => {
     buscarSetorAtuacao();
     if (id !== undefined) {
-    buscarServicosPorId(id);
+      buscarServicosPorId(id);
       console.log(setorAtuacao);
-
     }
   }, [id]);
 
@@ -97,21 +96,22 @@ function FormularioServico() {
 
     console.log({ servico });
 
-    if (id != undefined) {
+    if (id !== undefined) {
       try {
         await atualizar(`/servicos`, servico, setServico, {
           headers: {
             Authorization: token,
           },
         });
-        alert('Serviço atualizada com sucesso');
+
+        toastAlerta('Serviço atualizado com sucesso','sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
-          handleLogout()
+          toastAlerta('O token expirou, favor logar novamente','info');
+          handleLogout();
         } else {
-          alert('Erro ao atualizar a Servico');
+          toastAlerta('Erro ao atualizar o Serviço','erro');
         }
       }
     } else {
@@ -122,14 +122,14 @@ function FormularioServico() {
           },
         });
 
-        alert('Serviço cadastrada com sucesso');
+        toastAlerta('Serviço cadastrado com sucesso','sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
-          handleLogout()
+          toastAlerta('O token expirou, favor logar novamente','info');
+          handleLogout();
         } else {
-          alert('Erro ao cadastrar a Serviço');
+          toastAlerta('Erro ao cadastrar o Serviço','erro');
         }
       }
     }
@@ -142,7 +142,7 @@ function FormularioServico() {
 
       <form onSubmit={gerarNovaServico} className="flex flex-col w-1/2 gap-4">
         
-      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
           <label htmlFor="foto">Imagem do serviço</label>
           <input
             value={servico.foto}
@@ -167,11 +167,11 @@ function FormularioServico() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Texto do Servico</label>
+          <label htmlFor="descricao">Texto do Serviço</label>
           <input
             value={servico.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="descricao"
+            type="text"
             placeholder="Descrição"
             name="descricao"
             required
@@ -183,9 +183,7 @@ function FormularioServico() {
           <select name="setorAtuacao" id="setorAtuacao" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarSetorAtuacaoPorId(e.currentTarget.value)}>
             <option value="" selected disabled>Selecione um Setor de Atuação</option>
             {setorAtuacoes.map((setorAtuacao) => (
-              <>
-                <option value={setorAtuacao.id} >{setorAtuacao.nome}</option>
-              </>
+              <option key={setorAtuacao.id} value={setorAtuacao.id}>{setorAtuacao.nome}</option>
             ))}
           </select>
         </div>
