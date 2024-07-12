@@ -39,7 +39,7 @@ function App() {
               <Route path="/editarSetorAtuacao/:id" element={<FormularioSetor />} />
               <Route path="/deletarSetorAtuacao/:id" element={<DeletarSetorAtuacao />} />
               <Route path="/servicos" element={<ListaServicos/>} />
-              <Route path="/cadastroServico" element={<FormularioSetor />} />
+              <Route path="/cadastroServico" element={<FormularioServico/>} />
               <Route path="/deletarServico/:id" element={<DeletarServico />} />
               <Route path="/editarServico/:id" element={<FormularioServico />} />
               <Route path="/perfil" element={<Perfil />} />
