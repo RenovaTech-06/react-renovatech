@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Home.css';
 import ModalServico from '../../components/servicos/modalServico/ModalServico';
-import ListaServicos from '../../components/servicos/listarServico/listarServico';
+// import ListaServicos from '../../components/servicos/listarServico/listarServico';
 
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,61 +9,87 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import CardServicos from '../../components/servicos/cardServicos/CardServicos';
 import Servicos from '../../models/Servicos';
+import { AuthContext } from '../../contexts/AuthContext';
+import { buscar } from '../../services/Service';
+import { toastAlerta } from '../../util/toastAlerta';
 
 
 
 function Home() {
 
   const [servicos, setServicos] = useState<Servicos[]>([]);
+
+  const { cliente, handleLogout } = useContext(AuthContext);
+  const token = cliente.token;
+
+  async function buscarServico() {
+    try {
+      await buscar('/servicos', setServicos, {
+        headers: {
+          Authorization: token,
+        },
+      });
+    } catch (error: any) {
+      if (error.toString().includes('403')) {
+        toastAlerta('O token expirou, favor logar novamente','info')
+        handleLogout()
+      }
+    }
+  }
+
+  useEffect(() => {
+    buscarServico();
+  }, [servicos.length]);
+
+
     return (
         <>
         
-        <div className="relative w-full ">
-   
-          <img src="https://i.imgur.com/UV9tvYw.jpg" alt="Imagem de fundo" className="w-full h-full object-cover"/>
+      <div className="relative w-full">
+          <img
+            src="https://i.imgur.com/Nnv1wMa.jpeg"
+            alt="Imagem de fundo"
+            className="w-full h-full object-cover"
+          />
         
-
-      
-        <div className="absolute inset-0 flex justify-center items-center p-8 bg-green-400 bg-opacity-20">
-          <div className="text-white text-center">
-            <img src="../../src/assets/logo-renovatech-white.svg" alt="logo" />
-            {/* <h1 className="text-4xl font-bold mb-4">Renovatech</h1> */}
+       <div className=" absolute inset-0 flex justify-end items-center bg-green-400 bg-opacity-20 md:p-8 md:mr-2">
+          <div className="text-white text-center mx-auto md:ml-auto md:mr-4 p-4 md:p-0">
+            <img
+              src="../../src/assets/logo-renovatech-white.svg"
+              alt="logo"
+              className="mb-4 mx-auto md:mx-0"
+            />
             <p className="mb-4">Impulsionando Inovação Sustentável</p>
             <div>
-            <ModalServico />
-              
+              <ModalServico />
+            </div>
+          </div>
         </div>
+        
+        
       </div>
-    </div>
-  </div>
   
+  <div className='container mx-auto my-4'>
   <Swiper
-        slidesPerView={1}
+        slidesPerView={3}
         spaceBetween={30}
+        loop={true}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper p-6"
       >
-
-
         {servicos.map((servico) => (
-          <SwiperSlide key={servico.id}>
-            <CardServicos key={servico.cliente?.razaoSocial} post={servico} />
+          <SwiperSlide key={servico.id} >
+            <CardServicos post={servico} />
           </SwiperSlide>
-           
-        
-      //     {items.map((item) => (
-      //   <SwiperSlide key={item.id}>
-      //     <CardServicos title={item.title} description={item.description} />
-
-      //   </SwiperSlide>
       )
     )}
       </Swiper>
+  </div>
 
-  <ListaServicos/>
+  {/* <ListaServicos/> */}
         
   <section className="bg-green-600 py-40">
         <div className="container mx-auto px-10 lg:px-20">
