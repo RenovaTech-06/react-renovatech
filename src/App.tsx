@@ -14,6 +14,7 @@ import DeletarSetorAtuacao from './components/setorAtuacao/deletarSetor/DeletarS
 import ListaServicos from './components/servicos/listarServico/listarServico'
 import FormularioServico from './components/servicos/formularioServico/formularioServico'
 import DeletarServico from './components/servicos/deletarServico/deletarServico'
+import Perfil from './pages/perfil/Perfil'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/cadastroServico" element={<FormularioSetor />} />
               <Route path="/deletarServico/:id" element={<DeletarServico />} />
               <Route path="/editarServico/:id" element={<FormularioServico />} />
+              <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
           <Footer />

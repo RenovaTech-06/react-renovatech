@@ -1,4 +1,5 @@
 import React from 'react'
+import Contato from '../contato/Contato'
 
 function Sobre() {
   return (
@@ -27,6 +28,8 @@ function Sobre() {
           <p>Responsabilidade: Compromisso com práticas sustentáveis e éticas, respeitando o meio ambiente e a sociedade.</p>
 
       </div>
+
+      <Contato />
     </>
   )
 }

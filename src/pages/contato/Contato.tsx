@@ -3,7 +3,7 @@ import React from 'react'
 function Contato() {
   return (
     <>
-    <div className='p-20 mx-40 '>
+    <div className='container p-20  '>
     <form>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
@@ -74,7 +74,7 @@ function Contato() {
               </div>
             </div>
 
-            <div className="sm:col-span-3">
+            {/* <div className="sm:col-span-3">
               <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
                 País
               </label>
@@ -90,7 +90,7 @@ function Contato() {
                   <option>Estados Unidos</option>
                 </select>
               </div>
-            </div>
+            </div> */}
 
 
           </div>
