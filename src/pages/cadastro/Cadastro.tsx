@@ -53,7 +53,13 @@ function Cadastro() {
       e.preventDefault()
   
       if (confirmaSenha === cliente.senha && cliente.senha.length >= 8) {
-  
+
+          // if(cliente.foto === ''){
+          //   setCliente({
+
+          //   })
+          // }
+
         try {
           await cadastrarCliente(`/clientes/cadastrar`, cliente, setClienteResposta)
           toastAlerta('Cliente cadastrado com sucesso','sucesso')

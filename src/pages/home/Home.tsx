@@ -12,6 +12,7 @@ import Servicos from '../../models/Servicos';
 import { AuthContext } from '../../contexts/AuthContext';
 import { buscar } from '../../services/Service';
 import { toastAlerta } from '../../util/toastAlerta';
+import Contato from '../contato/Contato';
 
 
 
@@ -141,7 +142,9 @@ function Home() {
             </p>
           </div>
         </div>
-      </section>    
+      </section> 
+
+      <Contato/>   
       </>
     );
 }
