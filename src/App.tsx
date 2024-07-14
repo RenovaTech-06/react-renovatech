@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
@@ -36,7 +35,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/setoratuacao" element={<ListaSetorAtuacao />} />
-              <Route path="/servicos/:id" element={<ServicosPorSetor />} />
+              {/* <Route path="/servicos/:id" element={<ServicosPorSetor />} /> */}
               <Route path="/cadastroSetorAtuacao" element={<FormularioSetor />} />
               <Route path="/editarSetorAtuacao/:id" element={<FormularioSetor />} />
               <Route path="/deletarSetorAtuacao/:id" element={<DeletarSetorAtuacao />} />
@@ -44,6 +43,7 @@ function App() {
               <Route path="/cadastroServico" element={<FormularioServico/>} />
               <Route path="/deletarServico/:id" element={<DeletarServico />} />
               <Route path="/editarServico/:id" element={<FormularioServico />} />
+              <Route path="/servicosSetor/:id" element={<ServicosPorSetor />} />
               <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>

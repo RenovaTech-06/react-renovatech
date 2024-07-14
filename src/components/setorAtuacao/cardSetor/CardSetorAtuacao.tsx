@@ -1,49 +1,12 @@
-import React, { useContext, useState } from "react";
 import SetorAtuacao from "../../../models/SetorAtuacao";
 import { Link } from "react-router-dom";
 import { Trash, Pencil } from "@phosphor-icons/react";
-import { buscar } from "../../../services/Service";
-import Servicos from "../../../models/Servicos";
-import { toastAlerta } from "../../../util/toastAlerta";
-import { AuthContext } from "../../../contexts/AuthContext";
-import CardServicos from "../../servicos/cardServicos/CardServicos";
-import ServicosPorSetor from "../../servicos/servicosPorSetor/ServicosPorSetor";
 
 interface CardSetorAtuacaoProps {
   setorAtuacao: SetorAtuacao;
 }
 
 function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
-
-  const [servicos, setServicos] = useState<Servicos[]>([]);
-  const [mostrarServicos, setMostrarServicos] = useState<boolean>(false);
-
-  const { cliente, handleLogout } = useContext(AuthContext);
-  const token = cliente.token;
-
-  async function buscarServicos() {
-    try {
-      const response = await buscar(`/setoratuacao/${id}`, setServicos, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      
-    } catch (error: any) {
-      toastAlerta('Erro ao buscar serviços', 'error');
-    }
-  }
-
-  const handleMostrarServicos = async () => {
-  
-      await buscarServicos();
-    
-    setMostrarServicos(!mostrarServicos);
-  };
-
-
-
-
 
   return (
     <div className="border flex flex-col rounded-[8px] overflow-hidden relative shadow-lg">
@@ -55,22 +18,12 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
       
        
         <button
-          onClick={handleMostrarServicos}
           className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
-          <Link to={`/servicos/${setorAtuacao.id}`}>
+          <Link to={`/servicosSetor/${setorAtuacao.id}`}>
             Ver Serviços
-            {/* <ServicosPorSetor/> */}
           </Link>
         </button>
-
-        {/* {mostrarServicos && (
-          <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {servicos.map((servico) => (
-              <CardServicos key={servico.id} post={servico} />
-            ))}
-          </div>
-        )} */}
   
       </div>
       

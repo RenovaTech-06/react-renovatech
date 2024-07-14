@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Home.css';
 import ModalServico from '../../components/servicos/modalServico/ModalServico';
-// import ListaServicos from '../../components/servicos/listarServico/listarServico';
 
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,6 +14,7 @@ import { toastAlerta } from '../../util/toastAlerta';
 import Contato from '../contato/Contato';
 import { ThreeCircles } from 'react-loader-spinner';
 
+import logowhite from '../../assets/logo-renovatech-white.svg';
 
 
 function Home() {
@@ -57,9 +57,9 @@ function Home() {
           />
         
        <div className=" absolute inset-0 flex justify-end items-center bg-green-400 bg-opacity-20 md:p-8 md:mr-2">
-          <div className="text-white text-center mx-auto md:ml-auto md:mr-4 p-4 md:p-0">
+          <div className="text-white text-center mx-auto md:ml-auto md:mr-48 p-4 md:p-0">
             <img
-              src="../../src/assets/logo-renovatech-white.svg"
+              src={logowhite}
               alt="logo"
               className="mb-4 mx-auto md:mx-0"
             />
@@ -87,8 +87,6 @@ function Home() {
       )}
   <div className='container flex mx-auto my-4'>
       <Swiper
-        // slidesPerView={1}
-        // spaceBetween={30}
         loop={true}
         pagination={{
           clickable: true,
