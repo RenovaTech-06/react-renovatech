@@ -13,6 +13,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { buscar } from '../../services/Service';
 import { toastAlerta } from '../../util/toastAlerta';
 import Contato from '../contato/Contato';
+import { ThreeCircles } from 'react-loader-spinner';
 
 
 
@@ -45,6 +46,8 @@ function Home() {
 
     return (
         <>
+
+        
         
       <div className="relative w-full">
           <img
@@ -69,15 +72,41 @@ function Home() {
         
         
       </div>
-  
-  <div className='container mx-auto my-4'>
-  <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+      {servicos.length === 0 && (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <ThreeCircles
+          visible={true}
+          height="150"
+          width="150"
+          color="#4fa94d"
+          ariaLabel="three-circles-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          />    
+          </div> 
+      )}
+  <div className='container flex mx-auto my-4'>
+      <Swiper
+        // slidesPerView={1}
+        // spaceBetween={30}
         loop={true}
         pagination={{
           clickable: true,
         }}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      }}
         modules={[Pagination]}
         className="mySwiper p-6"
       >
@@ -86,7 +115,7 @@ function Home() {
             <CardServicos post={servico} />
           </SwiperSlide>
       )
-    )}
+      )}
       </Swiper>
   </div>
 

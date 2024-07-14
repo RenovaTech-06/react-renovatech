@@ -16,26 +16,49 @@ function Navbar() {
     navigate('/')
 }
 
-  return (
-    <>
+    let navBarComponent
 
-     <div className='w-full bg-green-700 text-white flex justify-center py-4'>
+    if(cliente.token !== '') {
+      navBarComponent = (
+        
+        <div className='w-full bg-green-700 text-white flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
             <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
 
             <div className='flex gap-4'>
               <Link to='/' className='hover:underline'>Home</Link>
               <Link to='/servicos' className='hover:underline'>Serviços</Link>
-              {/* <Link to='/sobre' className='hover:underline'>Sobre Nós</Link> */}
-              <Link to='/setoratuacao' className='hover:underline'>Setores de Atuação</Link>
+              
+              <Link to='/setoratuacao' className='hover:underline'>Setor de Atuação</Link>
               <Link to='/cadastroSetorAtuacao' className='hover:underline'>Cadastrar Setor</Link>
               <Link to='/perfil' className='hover:underline'>Perfil</Link>
-              <Link to='/login' className='hover:underline'>Login</Link>
-              <Link to='/cadastro' className='hover:underline'>Entrar</Link>
               <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
             </div>
           </div>
         </div>
+      )
+    } else {
+      navBarComponent = (
+
+        <div className='w-full bg-green-700 text-white flex justify-center py-4'>
+        <div className="container flex justify-between text-lg">
+          <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
+
+          <div className='flex gap-4'>
+            <Link to='/' className='hover:underline'>Home</Link>
+            <Link to='/servicos' className='hover:underline'>Serviços</Link>
+            {/* <Link to='/sobre' className='hover:underline'>Sobre Nós</Link> */}
+            <Link to='/login' className='hover:underline'>Entrar</Link>
+            <Link to='/cadastro' className='hover:underline'>Cadastro</Link>
+          </div>
+        </div>
+      </div>
+      )
+    }
+
+  return (
+    <>
+          {navBarComponent}
     </>
   )
 }

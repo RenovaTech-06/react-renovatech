@@ -10,6 +10,7 @@ import { toastAlerta } from '../../../util/toastAlerta';
 function ListaSetorAtuacao() {
 
   const [setorAtuacao, setSetorAtuacao] = useState<SetorAtuacao[]>([]);
+  const [buscarTermo, setBuscarTermo] = useState<string>('');
 
   let navigate = useNavigate();
 
@@ -39,10 +40,17 @@ function ListaSetorAtuacao() {
   useEffect(() => {
     buscarSetorAtuacao();
   }, [setorAtuacao.length]);
+
+  const filtroSetorAtuacao = setorAtuacao.filter((setorAtuacao) =>
+    setorAtuacao.nome.toLowerCase().includes(buscarTermo.toLowerCase())
+);
   
 
   return (
     <>
+
+                
+
         {setorAtuacao.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <ThreeCircles
@@ -64,11 +72,17 @@ function ListaSetorAtuacao() {
                 websites and webapps</p>
       </div>
 
-
+        <div className="container flex flex-col my-10 mx-auto w-1/2">
+              <input 
+                  type="text" placeholder="Buscar Setor de Atuação" value={buscarTermo}
+                        onChange={(e) => setBuscarTermo(e.target.value)}
+                        className="p-4 border-2 pl-10  mb-4 bg-[#e9f5db] placeholder-lime-900"/>
+        </div>
+      
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {setorAtuacao.map((setorAtuacao) => (
+            {filtroSetorAtuacao.map((setorAtuacao) => (
               <>
                   <CardSetorAtuacao key={setorAtuacao.id} setorAtuacao={setorAtuacao} />
               </>

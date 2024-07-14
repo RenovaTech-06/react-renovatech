@@ -9,18 +9,12 @@ import { toastAlerta } from '../../../util/toastAlerta';
 
 function ListaServicos() {
   const [servicos, setServicos] = useState<Servicos[]>([]);
+  const [buscarTermo, setBuscarTermo] = useState<string>('');
 
   let navigate = useNavigate();
 
   const { cliente, handleLogout } = useContext(AuthContext);
   const token = cliente.token;
-
-  // useEffect(() => {
-  //   if (token === '') {
-  //     alert('Você precisa estar logado');
-  //     navigate('/login');
-  //   }
-  // }, [token]);
 
   async function buscarServico() {
     try {
@@ -41,8 +35,20 @@ function ListaServicos() {
     buscarServico();
   }, [servicos.length]);
 
+  const filtroServicos = servicos.filter((servico) =>
+    servico.cliente?.razaoSocial.toLowerCase().includes(buscarTermo.toLowerCase())
+);
+
   return (
     <>
+
+        <div className="container flex flex-col my-10 mx-auto w-1/2">
+            <input
+                type="text" placeholder="Buscar por Serviço" value={buscarTermo}
+                onChange={(e) => setBuscarTermo(e.target.value)}
+                className="p-4 border-2 pl-10  mb-4 bg-[#e9f5db] placeholder-lime-900"/>
+        </div>
+
       {servicos.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <ThreeCircles
@@ -57,7 +63,7 @@ function ListaServicos() {
           </div> 
       )}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {servicos.map((servico) => (
+        {filtroServicos.map((servico) => (
           <CardServicos key={servico.id} post={servico} />
         ))}
       </div>

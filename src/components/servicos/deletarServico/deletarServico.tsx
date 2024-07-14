@@ -55,10 +55,10 @@ function DeletarServico() {
         }
       })
 
-      toastAlerta('Postagem apagada com sucesso', 'sucesso')
+      toastAlerta('Serviço apagado com sucesso', 'sucesso')
 
     } catch (error) {
-      toastAlerta('Erro ao apagar a Postagem', 'erro')
+      toastAlerta('Erro ao apagar Serviço', 'erro')
     }
 
     retornar()
