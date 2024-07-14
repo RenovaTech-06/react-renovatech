@@ -7,6 +7,7 @@ import Servicos from "../../../models/Servicos";
 import { toastAlerta } from "../../../util/toastAlerta";
 import { AuthContext } from "../../../contexts/AuthContext";
 import CardServicos from "../../servicos/cardServicos/CardServicos";
+import ServicosPorSetor from "../../servicos/servicosPorSetor/ServicosPorSetor";
 
 interface CardSetorAtuacaoProps {
   setorAtuacao: SetorAtuacao;
@@ -59,16 +60,17 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
         >
           <Link to={`/servicos/${setorAtuacao.id}`}>
             Ver Serviços
+            {/* <ServicosPorSetor/> */}
           </Link>
         </button>
 
-        {mostrarServicos && (
+        {/* {mostrarServicos && (
           <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
             {servicos.map((servico) => (
               <CardServicos key={servico.id} post={servico} />
             ))}
           </div>
-        )}
+        )} */}
   
       </div>
       
