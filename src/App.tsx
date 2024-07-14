@@ -35,7 +35,6 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/setoratuacao" element={<ListaSetorAtuacao />} />
-              {/* <Route path="/servicos/:id" element={<ServicosPorSetor />} /> */}
               <Route path="/cadastroSetorAtuacao" element={<FormularioSetor />} />
               <Route path="/editarSetorAtuacao/:id" element={<FormularioSetor />} />
               <Route path="/deletarSetorAtuacao/:id" element={<DeletarSetorAtuacao />} />

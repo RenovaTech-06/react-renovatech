@@ -2,6 +2,7 @@ import SetorAtuacao from "../../../models/SetorAtuacao";
 import { Link } from "react-router-dom";
 import { Trash, Pencil } from "@phosphor-icons/react";
 
+
 interface CardSetorAtuacaoProps {
   setorAtuacao: SetorAtuacao;
 }
@@ -35,6 +36,7 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
           <span className="sr-only">Editar</span>
           <Pencil size={18} weight="fill" />
         </Link>
+
         <Link
           to={`/deletarSetorAtuacao/${setorAtuacao.id}`}
           className="text-slate-100 bg-red-400 hover:bg-red-700 rounded-full flex items-center justify-center w-8 h-8"
