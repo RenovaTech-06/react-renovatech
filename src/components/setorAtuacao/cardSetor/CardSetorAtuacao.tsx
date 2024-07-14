@@ -23,7 +23,7 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
 
   async function buscarServicos() {
     try {
-      const response = await buscar(`/servicos/${setorAtuacao.id}`, setServicos, {
+      const response = await buscar(`/setoratuacao/${id}`, setServicos, {
         headers: {
           Authorization: token,
         },
