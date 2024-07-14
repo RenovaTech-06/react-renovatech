@@ -57,21 +57,22 @@ function Home() {
           />
         
        <div className=" absolute inset-0 flex justify-end items-center bg-green-400 bg-opacity-20 md:p-8 md:mr-2">
-          <div className="text-white text-center mx-auto md:ml-auto md:mr-48 p-4 md:p-0">
+          <div className="flex flex-col items-center text-white text-center mx-auto md:ml-auto md:mr-48 p-4 md:p-0">
             <img
               src={logowhite}
               alt="logo"
               className="mb-4 mx-auto md:mx-0"
             />
-            <p className="mb-4">Impulsionando Inovação Sustentável</p>
-            <div>
-              <ModalServico />
-            </div>
+            <p className="mb-4 text-2xl">Impulsionando Inovação Sustentável</p>
+            
           </div>
         </div>
         
         
       </div>
+      {/* <div>
+              <ModalServico />
+            </div> */}
       {servicos.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <ThreeCircles

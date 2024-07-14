@@ -1,10 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import loginLogo from '../../assets/logo-renovatech.png';
 import { toastAlerta } from '../../util/toastAlerta';
+import Servicos from '../../models/Servicos';
 
 function Perfil() {
+
+  const [servico, setServico] = useState<Servicos>({} as Servicos)
   let navigate = useNavigate();
 
   const { cliente } = useContext(AuthContext);
@@ -37,7 +40,8 @@ function Perfil() {
         <div className="flex flex-col items-center pb-10">
           <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={cliente.foto} alt="Imagem de perfil" />
           <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">Razão social: {cliente.razaoSocial}</h5>
-          <span className="text-sm text-gray-500 dark:text-gray-400">Telefone: (11) 99999-9999 {cliente.telefone}</span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">Email:{cliente.email}</span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">Telefone:(99)999999999{servico.contato}</span>
           <span className="text-sm text-gray-500 dark:text-gray-400">Endereço: Rua Bela Vista, 300 - SP {cliente.endereco}</span>
           <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">Descrição: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. {cliente.descricao}</p>
           <div className="flex mt-4 md:mt-6">
@@ -67,47 +71,3 @@ function Perfil() {
 }
 
 export default Perfil;
-
-
-
-
-// import React, { useContext, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { AuthContext } from '../../contexts/AuthContext';
-// import loginLogo from '../../assets/logo-renovatech.png';
-
-
-// function Perfil() {
-//   let navigate = useNavigate();
-
-//   const { cliente } = useContext(AuthContext);
-
-//   useEffect(() => {
-//     if (cliente.token === "") {
-//       alert('Dados inconsistentes. Verifique as informações de cadastro.');
-//       navigate("/login");
-//     }
-//   }, [cliente.token, navigate]);
-
-//   return (
-//     <div className='container mx-auto mt-10 rounded-3xl overflow-hidden shadow-lg'>
-//       <div className='relative'>
-//         <img className='w-full h-72 object-cover border-b-8 border-white' src={loginLogo} alt="Capa do Perfil" />
-//         <img 
-//           src={cliente.foto} 
-//           alt={`Foto de perfil de ${cliente.razaoSocial}`} 
-//           className='rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10 shadow-lg' 
-//         />
-//       </div>
-//       <div className="relative mt-[-5rem] h-72 flex flex-col bg-gradient-to-r from-green-500 to-green-700 text-white text-2xl items-center justify-center rounded-b-3xl shadow-inner">
-//         <p className='transition-transform duration-300 hover:scale-105'>Nome: {cliente.razaoSocial}</p>
-//         <p className='transition-transform duration-300 hover:scale-105'>Email: {cliente.email}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Perfil;
-
-
-

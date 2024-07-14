@@ -49,23 +49,7 @@ function ListaSetorAtuacao() {
   return (
     <>
 
-                
-
-        {setorAtuacao.length === 0 && (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <ThreeCircles
-        visible={true}
-        height="150"
-        width="150"
-        color="#4fa94d"
-        ariaLabel="three-circles-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-  />
-  </div>
-)}
-
-      <div className=" py-4 max-w-xl mx-auto text-center xl:max-w-2xl">
+     <div className=" py-4 max-w-xl mx-auto text-center xl:max-w-2xl">
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">We are just
                 getting started!</h2>
             <p className="mb-4">We are creating a tool that helps you be more productive and efficient when building
@@ -78,6 +62,22 @@ function ListaSetorAtuacao() {
                         onChange={(e) => setBuscarTermo(e.target.value)}
                         className="p-4 border-2 pl-10  mb-4 bg-[#e9f5db] placeholder-lime-900"/>
         </div>
+      
+      
+        {setorAtuacao.length === 0 && (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <ThreeCircles
+        visible={true}
+        height="150"
+        width="150"
+        color="#4fa94d"
+        ariaLabel="three-circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+          />
+          </div>
+        )}
+      
       
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">

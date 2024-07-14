@@ -1,12 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 import { toastAlerta } from '../../util/toastAlerta'
-
+import { Menu } from '@headlessui/react'
+import logo from '../../assets/logo-renovatech-white.svg'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 
 function Navbar() {
 
   let navigate = useNavigate()
+  const [isOpen, setIsOpen] = useState(false);
 
   const { cliente, handleLogout } = useContext(AuthContext)
  

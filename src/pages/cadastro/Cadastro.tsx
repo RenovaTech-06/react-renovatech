@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom"
 import Cliente from "../../models/Cliente"
 import { cadastrarCliente } from "../../services/Service"
 import { toastAlerta } from "../../util/toastAlerta"
-
+import { Buildings } from "@phosphor-icons/react"
+import fotopadrao from '../../assets/buildings-light.svg'
 function Cadastro() {
 
     let navigate = useNavigate()
@@ -16,7 +17,7 @@ function Cadastro() {
         razaoSocial: "",
         email: "",
         senha: "",
-        foto: ""
+        foto: "https://i.imgur.com/cLoiHis.png"
     })
   
     const [clienteResposta, setClienteResposta] = useState<Cliente>({
@@ -25,7 +26,7 @@ function Cadastro() {
         razaoSocial: "",
         email: "",
         senha: "",
-        foto: ""
+        foto: "https://i.imgur.com/cLoiHis.png"
     })
   
     useEffect(() => {
@@ -56,7 +57,8 @@ function Cadastro() {
 
           // if(cliente.foto === ''){
           //   setCliente({
-
+          //     ...cliente,
+          //     foto: 'https://i.imgur.com/cLoiHis.png'
           //   })
           // }
 
