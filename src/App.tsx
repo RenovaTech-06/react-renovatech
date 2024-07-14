@@ -18,6 +18,7 @@ import Perfil from './pages/perfil/Perfil'
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import { ToastContainer } from 'react-toastify'
+import ServicosPorSetor from './components/servicos/servicosPorSetor/ServicosPorSetor'
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/setoratuacao" element={<ListaSetorAtuacao />} />
+              <Route path="/servicos/:id" element={<ServicosPorSetor />} />
               <Route path="/cadastroSetorAtuacao" element={<FormularioSetor />} />
               <Route path="/editarSetorAtuacao/:id" element={<FormularioSetor />} />
               <Route path="/deletarSetorAtuacao/:id" element={<DeletarSetorAtuacao />} />

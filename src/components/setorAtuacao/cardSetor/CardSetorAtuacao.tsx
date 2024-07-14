@@ -14,31 +14,31 @@ interface CardSetorAtuacaoProps {
 
 function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
 
-  // const [servicos, setServicos] = useState<Servicos[]>([]);
-  // const [mostrarServicos, setMostrarServicos] = useState<boolean>(false);
+  const [servicos, setServicos] = useState<Servicos[]>([]);
+  const [mostrarServicos, setMostrarServicos] = useState<boolean>(false);
 
-  // const { cliente, handleLogout } = useContext(AuthContext);
-  // const token = cliente.token;
+  const { cliente, handleLogout } = useContext(AuthContext);
+  const token = cliente.token;
 
-  // async function buscarServicos() {
-  //   try {
-  //     const response = await buscar(`/servicos/${setorAtuacao.id}`, setServicos, {
-  //       headers: {
-  //         Authorization: token,
-  //       },
-  //     });
+  async function buscarServicos() {
+    try {
+      const response = await buscar(`/servicos/${setorAtuacao.id}`, setServicos, {
+        headers: {
+          Authorization: token,
+        },
+      });
       
-  //   } catch (error: any) {
-  //     toastAlerta('Erro ao buscar serviços', 'error');
-  //   }
-  // }
+    } catch (error: any) {
+      toastAlerta('Erro ao buscar serviços', 'error');
+    }
+  }
 
-  // const handleMostrarServicos = async () => {
+  const handleMostrarServicos = async () => {
   
-  //     await buscarServicos();
+      await buscarServicos();
     
-  //   setMostrarServicos(!mostrarServicos);
-  // };
+    setMostrarServicos(!mostrarServicos);
+  };
 
 
 
@@ -52,21 +52,23 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
       <div className="p-4">
         <p>{setorAtuacao.descricao}</p>
       
-        {/* <button
+       
+        <button
           onClick={handleMostrarServicos}
           className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
-          {/* {mostrarServicos ? 'Esconder Serviços' : 'Mostrar Serviços'} */}
-        
-            {/* {mostrarServicos && (
+          <Link to={`/servicos/${setorAtuacao.id}`}>
+            Ver Serviços
+          </Link>
+        </button>
 
-            <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-                {servicos.map((servico) => (
-                <CardServicos key={servico.setorAtuacao.id} post={servico} />
-              ))}
-              </div>
+        {mostrarServicos && (
+          <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            {servicos.map((servico) => (
+              <CardServicos key={servico.id} post={servico} />
+            ))}
+          </div>
         )}
-      </button> */}
   
       </div>
       
