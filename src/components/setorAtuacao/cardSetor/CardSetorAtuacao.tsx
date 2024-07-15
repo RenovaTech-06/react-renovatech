@@ -11,7 +11,7 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
 
   return (
     <div className="border flex flex-col rounded-[8px] overflow-hidden relative shadow-lg">
-      <header className="pt-12 py-8 px-6 bg-green-800 text-white font-bold text-2xl">
+      <header className="pt-12 py-8 px-6 bg-green-700 text-white font-bold text-2xl">
         {setorAtuacao.nome}
       </header>
       <div className="p-4">
@@ -19,7 +19,7 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
       
        
         <button
-          className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="mt-4 p-2 bg-green-600 text-white rounded hover:bg-green-800"
         >
           <Link to={`/servicosSetor/${setorAtuacao.id}`}>
             Ver Serviços

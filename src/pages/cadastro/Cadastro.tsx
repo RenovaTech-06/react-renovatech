@@ -16,7 +16,7 @@ function Cadastro() {
         razaoSocial: "",
         email: "",
         senha: "",
-        foto: "https://i.imgur.com/cLoiHis.png"
+        foto: ""
     })
   
     const [clienteResposta, setClienteResposta] = useState<Cliente>({
@@ -25,7 +25,7 @@ function Cadastro() {
         razaoSocial: "",
         email: "",
         senha: "",
-        foto: "https://i.imgur.com/cLoiHis.png"
+        foto: ""
     })
   
     useEffect(() => {
@@ -53,6 +53,8 @@ function Cadastro() {
       e.preventDefault()
   
       if (confirmaSenha === cliente.senha && cliente.senha.length >= 8) {
+               
+            
 
         try {
           await cadastrarCliente(`/clientes/cadastrar`, cliente, setClienteResposta)
@@ -130,10 +132,9 @@ function Cadastro() {
                             className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none" />
                     </div>
 
-                    {/* Aqui você pode adicionar um campo para o nome do arquivo da foto */}
                     <div className="flex items-center mb-5">
                     <label htmlFor="foto" className="inline-block w-32 mr-6 text-right font-bold text-gray-600 whitespace-nowrap">Foto</label>
-                        <input type="text" id="foto" name="foto" value={cliente.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} placeholder="Nome do Arquivo da Foto"
+                        <input type="text" id="foto" name="foto" value={cliente.foto || 'https://i.imgur.com/cLoiHis.png'} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} placeholder="Nome do Arquivo da Foto"
                             className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none" />
                     </div>
 

@@ -101,7 +101,7 @@ function FormularioSetor() {
   return (
     <>
     <div className="container mx-auto p-4 md:p-8 flex flex-col items-center justify-center max-w-lg">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
+        <h1 className="text-3xl text-green-700 md:text-4xl font-bold text-center mb-6">
           {id === undefined ? 'Cadastre um novo Setor' : 'Editar Setor'}
         </h1>
 

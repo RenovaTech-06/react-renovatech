@@ -139,8 +139,8 @@ function FormularioServico() {
     
   
   return (
-      <div className="container flex flex-col mx-auto items-center px-4 py-6 bg-white shadow-lg rounded-lg ">
-        <h1 className="text-2xl font-semibold text-center mb-6">{id !== undefined ? 'Editar Serviço' : 'Cadastrar Serviço'}</h1>
+      <div className="container flex flex-col mx-auto items-center px-4 py-6 bg-white rounded-lg ">
+        <h1 className="text-2xl font-semibold text-center mb-6 text-green-700">{id !== undefined ? 'Editar Serviço' : 'Cadastrar Serviço'}</h1>
 
         <form onSubmit={gerarNovaServico} className="container flex flex-col gap-4 w-96">
           
@@ -153,7 +153,7 @@ function FormularioServico() {
               placeholder="Adicione uma imagem que defina seu serviço"
               name="foto"
               required
-              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
@@ -166,7 +166,7 @@ function FormularioServico() {
               placeholder="Contato"
               name="contato"
               required
-              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
@@ -179,7 +179,7 @@ function FormularioServico() {
               placeholder="Descrição"
               name="descricao"
               required
-              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
@@ -188,7 +188,7 @@ function FormularioServico() {
             <select 
               name="setorAtuacao" 
               id="setorAtuacao" 
-              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+              className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500" 
               onChange={(e) => buscarSetorAtuacaoPorId(e.currentTarget.value)}
             >
               <option value="" disabled selected>Selecione um Setor de Atuação</option>
@@ -201,7 +201,7 @@ function FormularioServico() {
           <button 
             disabled={carregandoSetorAtuacao} 
             type='submit' 
-            className={`rounded py-2 px-4 font-bold text-white w-full mt-4 ${carregandoSetorAtuacao ? 'bg-gray-400' : 'bg-indigo-500 hover:bg-indigo-700'}`}
+            className={`rounded py-2 px-4 font-bold text-white w-full mt-4 ${carregandoSetorAtuacao ? 'bg-gray-400' : 'bg-green-700 hover:bg-green-900'}`}
           >
             {carregandoSetorAtuacao ? 'Carregando...' : id !== undefined ? 'Editar' : 'Cadastrar'}
           </button>

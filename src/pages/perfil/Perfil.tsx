@@ -36,14 +36,14 @@ function Perfil() {
           </div>
         </div>
         <div className="flex flex-col items-center pb-10">
-          <img className="w-24 h-24 mb-3 border-2 border-gray-300 rounded-full shadow-lg" src={cliente.foto} alt="Imagem de perfil" />
+          <img className="w-24 h-24 mb-3 border-2 border-gray-300 rounded-full shadow-lg" src={cliente.foto || 'https://i.imgur.com/cLoiHis.png'} alt="Imagem de perfil" />
           <h5 className="mb-1 text-xl font-medium text-gray-900">Razão social: {cliente.razaoSocial}</h5>
           <span className="text-sm text-gray-500 ">Email:{cliente.email}</span>
           <span className="text-sm text-gray-500 ">Telefone:(99)999999999{servico.contato}</span>
           <span className="text-sm text-gray-500 ">Endereço: Rua Bela Vista, 300 - SP</span>
-          <p className="mt-3 text-sm text-gray-500">Descrição: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500. </p>
+          <p className="mt-3 text-sm text-center text-gray-500"><span className='font-bold'>Descrição:</span> Na {cliente.razaoSocial}, acreditamos que a inovação e a sustentabilidade caminham lado a lado. Nossa missão é transformar o mercado com soluções criativas que respeitam o meio ambiente e promovem um futuro mais verde para todos. Estamos dedicados a desenvolver produtos e serviços que não só atendem às necessidades de nossos clientes, mas também protegem e valorizam nosso planeta. Junte-se a nós nessa jornada para construir um mundo mais sustentável e inovador!</p>
           <div className="flex mt-4 md:mt-6">
-            <a href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Atualizar Perfil</a>
+            <a href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300">Atualizar Perfil</a>
           </div>
           <div className="flex space-x-3 mt-6">
             <a href='' className="text-blue-600 hover:text-blue-800">
