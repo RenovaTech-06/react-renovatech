@@ -161,12 +161,6 @@ function Home() {
             <h3 > Transparência:</h3>
             <h3 >Personalização:</h3>    
             <p className="text-white text-center leading-20">
-              Nossos princípios unem: Acesso Universal a Alimentos saudáveis,
-              educação nutricional consciente, sustentabilidade agrícola e apoio
-              a pequenos produtores. Solidariedade e equidade impulsionam nosso
-              compromisso com comunidades vulneráveis. Inovação responsável e
-              transparência sustentam nossa busca por um impacto positivo,
-              moldando um futuro saudável e sustentável para todos.
             </p>
           </div>
         </div>
