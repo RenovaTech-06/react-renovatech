@@ -39,7 +39,7 @@ function Perfil() {
           <img className="w-24 h-24 mb-3 border-2 border-gray-300 rounded-full shadow-lg" src={cliente.foto || 'https://i.imgur.com/cLoiHis.png'} alt="Imagem de perfil" />
           <h5 className="mb-1 text-xl font-medium text-gray-900">Razão social: {cliente.razaoSocial}</h5>
           <span className="text-sm text-gray-500 ">Email:{cliente.email}</span>
-          <span className="text-sm text-gray-500 ">Telefone:(99)999999999{servico.contato}</span>
+          <span className="text-sm text-gray-500 ">Telefone:(99)99999999{servico.contato}</span>
           <span className="text-sm text-gray-500 ">Endereço: Rua Bela Vista, 300 - SP</span>
           <p className="mt-3 text-sm text-center text-gray-500"><span className='font-bold'>Descrição:</span> Na {cliente.razaoSocial}, acreditamos que a inovação e a sustentabilidade caminham lado a lado. Nossa missão é transformar o mercado com soluções criativas que respeitam o meio ambiente e promovem um futuro mais verde para todos. Estamos dedicados a desenvolver produtos e serviços que não só atendem às necessidades de nossos clientes, mas também protegem e valorizam nosso planeta. Junte-se a nós nessa jornada para construir um mundo mais sustentável e inovador!</p>
           <div className="flex mt-4 md:mt-6">
