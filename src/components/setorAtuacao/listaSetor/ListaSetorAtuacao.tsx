@@ -50,17 +50,15 @@ function ListaSetorAtuacao() {
     <>
 
      <div className=" py-4 max-w-xl mx-auto text-center xl:max-w-2xl">
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl xl:text-5xl mb-6">We are just
-                getting started!</h2>
-            <p className="mb-4">We are creating a tool that helps you be more productive and efficient when building
-                websites and webapps</p>
+            <h2 className="text-2xl text-green-800 font-bold leading-tight sm:text-4xl xl:text-5xl mb-6 mt-6 ">Encontre o Setor Certo para a Sua Jornada de Inovação!</h2>
+            <p className="mb-4">Cada setor oferece oportunidades únicas para você transformar suas ideias em realidade. Navegue pelos nossos setores e encontre a melhor forma de inovar e crescer!</p>
       </div>
 
         <div className="container flex flex-col my-10 mx-auto w-1/2">
               <input 
                   type="text" placeholder="Buscar Setor de Atuação" value={buscarTermo}
                         onChange={(e) => setBuscarTermo(e.target.value)}
-                        className="p-4 border-2 pl-10  mb-4 bg-[#e9f5db] placeholder-lime-900"/>
+                        className="p-4 border-2 pl-10  mb-4 bg-[#ddffdd] placeholder-gray-500"/>
         </div>
       
       

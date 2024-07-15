@@ -51,7 +51,7 @@ function ServicosPorSetor() {
             <input
                 type="text" placeholder="Buscar por Serviço" value={buscarTermo}
                 onChange={(e) => setBuscarTermo(e.target.value)}
-                className="p-4 border-2 pl-10  mb-4 bg-[#ddffdd] placeholder-gray-00"/>
+                className="p-4 border-2 pl-10  mb-4 bg-[#ddffdd] placeholder-gray-500"/>
         </div>
 
     <div className="container flex flex-col items-center justify-center min-h-screen w-full mx-auto p-4">

@@ -6,6 +6,7 @@ import Servicos from '../../../models/Servicos';
 import { buscar } from '../../../services/Service';
 import CardServicos from '../cardServicos/CardServicos';
 import { toastAlerta } from '../../../util/toastAlerta';
+import ModalServico from '../modalServico/ModalServico';
 
 function ListaServicos() {
   const [servicos, setServicos] = useState<Servicos[]>([]);
@@ -42,11 +43,21 @@ function ListaServicos() {
   return (
     <>
 
+      <div className=" py-4 max-w-xl mx-auto text-center xl:max-w-2xl">
+            <h2 className="text-xl text-green-800 font-bold leading-tight sm:text-4xl xl:text-5xl mb-6 mt-6 ">Transforme Seus Desafios em Oportunidades com Serviços Especializados!</h2>
+            <p className="mb-4">Conheça os serviços disponíveis e veja como podemos ajudar você a transformar desafios em oportunidades de sucesso, 
+              e também encontre a oportunidade de se posicionar no mercado da inovação sustentável oferecendo seu próprio serviço!
+            </p>
+            <div>
+              <ModalServico />
+            </div>
+      </div>
+        
         <div className="container flex flex-col my-10 mx-auto w-1/2">
             <input
                 type="text" placeholder="Buscar por Serviço" value={buscarTermo}
                 onChange={(e) => setBuscarTermo(e.target.value)}
-                className="p-4 border-2 pl-10  mb-4 bg-[#e9f5db] placeholder-lime-900"/>
+                className="p-4 border-2 pl-10  mb-4 bg-[#ddffdd] placeholder-gray-500"/>
         </div>
 
       {servicos.length === 0 && (
