@@ -14,7 +14,7 @@ import { toastAlerta } from '../../util/toastAlerta';
 import Contato from '../contato/Contato';
 import { ThreeCircles } from 'react-loader-spinner';
 
-import logowhite from '../../assets/logo-renovatech-white.svg';
+import logo from '../../assets/logorenovatech.png';
 import imagemMissao from "../../assets/missao.png";
 import imagemVisao from "../../assets/visao.png";
 import imagemValores from "../../assets/valores.png";
@@ -138,23 +138,24 @@ function Home() {
             className="w-full h-full object-cover"
           />
         
-       <div className=" absolute inset-0 flex justify-end items-center bg-green-400 bg-opacity-20 md:p-8 md:mr-2">
-          <div className="flex flex-col items-center text-white text-center mx-auto md:ml-auto md:mr-48 p-4 md:p-0">
+       <div className=" absolute inset-0 flex justify-end items-center bg-green-400 bg-opacity-20 ">
+          <div className="flex flex-col items-center text-white text-center mx-auto md:ml-auto md:mr-28  md:p-0">
             <img
-              src={logowhite}
+              src={logo}
               alt="logo"
-              className="mb-4 mx-auto md:mx-0"
+              className="mb-4 h-92  mx-auto md:mx-0"
             />
-            <p className="mb-4 text-2xl">Impulsionando Inovação Sustentável</p>
-            
+            <div className='container max-w- md:mr-0'>
+              <p className=" mb-2 text-5xl text-white font-bold">Impulsionando Inovação</p>
+              <p className="mb-4 text-5xl text-white font-bold">Sustentável</p>
+              {/* <p className="mb-4 text-2xl text-white font-bold">Junte-se a nós para criar soluções verdes e inovadoras</p> */}
+            </div>
           </div>
         </div>
         
         
       </div>
-      {/* <div>
-              <ModalServico />
-            </div> */}
+
       {servicos.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <ThreeCircles
@@ -222,7 +223,7 @@ function Home() {
         <img
           src={imagemMissao}
           alt="Missão"
-          className="w-82 h-auto" // ajuste o tamanho da imagem conforme necessário
+          className="w-82 h-auto"
         />
       </div>
     </div>
@@ -234,7 +235,7 @@ function Home() {
         <img
           src={imagemVisao}
           alt="Visão"
-          className="w-82 h-auto" // ajuste o tamanho da imagem conforme necessário
+          className="w-82 h-auto"
         />
       </div>
       <div className="lg:w-1/2">

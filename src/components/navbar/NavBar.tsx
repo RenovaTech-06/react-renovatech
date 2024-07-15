@@ -3,8 +3,9 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 import { toastAlerta } from '../../util/toastAlerta'
 import { Menu } from '@headlessui/react'
-import logo from '../../assets/logo-renovatech-white.svg'
+
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
+import logoBranco from '../../assets/logo-branco.png'
 
 function Navbar() {
 
@@ -26,6 +27,11 @@ function Navbar() {
         
         <div className='w-full bg-green-700 text-white flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
+            <img
+              className="h-8 mr-3"
+              src={logoBranco}
+              alt="Renovatech logo"
+              />
             <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
 
             <div className='flex gap-4'>
@@ -45,7 +51,19 @@ function Navbar() {
 
         <div className='w-full bg-green-700 text-white flex justify-center py-4'>
         <div className="container flex justify-between text-lg">
-          <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
+        
+        <Link to='/' className="flex items-center">
+          <div className='grid grid-flow-col'>
+            <img
+                  className="h-8 mr-3"
+                  src={logoBranco}
+                  alt="Renovatech logo"
+                  />
+              <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
+          </div>
+        </Link> 
+        
+        
 
           <div className='flex gap-4'>
             <Link to='/' className='hover:underline'>Home</Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoverde from '../../assets/logo-renovatech.png'
+import logoBranco from '../../assets/logo-branco.png'
 
 function Footer() {
   
@@ -14,10 +14,10 @@ function Footer() {
                               <Link to='/' className="flex items-center">
                                   <img
                                       className="h-8 mr-3"
-                                      src={logoverde}
+                                      src={logoBranco}
                                       alt="Renovatech logo"
                                   />
-                                  <p className='self-center text-2xl font-semibold whitespace-nowrap text-white'>RENOVATECH</p>
+                                  <p className='self-center text-2xl font-bold whitespace-nowrap text-white'>RENOVATECH</p>
                               </Link>
                               
                               <div className="sm:flex sm:items-center sm:justify-between py-8">
