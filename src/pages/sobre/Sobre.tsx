@@ -3,7 +3,7 @@ import { LinkedinLogo } from "@phosphor-icons/react";
 import { GithubLogo } from "@phosphor-icons/react";
 
 function Sobre() {
-  // Imagens de perfil
+
   const images = [
     "https://i.imgur.com/carogxF.jpeg",
     "https://i.imgur.com/8LTojv8.jpeg",
@@ -13,7 +13,7 @@ function Sobre() {
     "https://i.imgur.com/6g1Q2J4.jpeg",
   ];
 
-  // Dados dos perfis
+  
   const profiles = [
     { name: "Ana Paola", github: "https://github.com/Ana-Paola24", linkedin: "https://www.linkedin.com/in/ana-paola-condori/", img: images[0] },
     { name: "Ellen Silva", github: "https://github.com/Ellenmape", linkedin: "https://www.linkedin.com/in/ellen-silva-40b78b186/", img: images[1] },

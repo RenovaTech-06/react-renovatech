@@ -35,7 +35,7 @@ function Footer() {
                                           <a href="https://github.com/RenovaTech-06" target='_blank' className="hover:underline ">Renovatech</a>
                                       </li>
                                       <li>
-                                          <a href='/sobre' target="_blank" className="hover:underline">Desenvolvedores</a>
+                                          <Link to='/sobre' target="_blank" className="hover:underline">Desenvolvedores</Link>
                                       </li>
                                   </ul>
                               </div>
