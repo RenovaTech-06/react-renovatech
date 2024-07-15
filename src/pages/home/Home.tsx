@@ -15,7 +15,9 @@ import Contato from '../contato/Contato';
 import { ThreeCircles } from 'react-loader-spinner';
 
 import logowhite from '../../assets/logo-renovatech-white.svg';
-
+import imagemMissao from "../../assets/missao.png";
+import imagemVisao from "../../assets/visao.png";
+import imagemValores from "../../assets/valores.png";
 
 function Home() {
 
@@ -42,6 +44,86 @@ function Home() {
   useEffect(() => {
     buscarServico();
   }, [servicos.length]);
+
+  function Valores({ handleClick, texto }) {
+    const handleItemClick = (valor) => {
+      handleClick(valor);
+    };
+  
+    return (
+      <div className="container mx-auto px-6 lg:px-20 py-3">
+        <div className="lg:flex lg:items-center lg:justify-between">
+          <div className="lg:w-1/2">
+            <div className="flex gap-x-2 items-center justify-center mb-2">
+              <h2 className="text-neutral-950 text-[2.9rem] font-bold">Valores</h2>
+            </div>
+            <div className="grid grid-cols-4 gap-2 py-2">
+              <h3
+                className="font-bold cursor-pointer  hover:text-green-500 mb-4 "
+                onClick={() => handleItemClick("Eficiência")}
+              >Eficiência
+              </h3>
+              <h3
+                className="font-bold cursor-pointer hover:text-green-500 mb-4 "
+                onClick={() => handleItemClick("Inovação")}
+              >Inovação
+              </h3>
+              <h3
+                className="font-bold cursor-pointer  hover:text-green-500 mb-4 "
+                onClick={() => handleItemClick("Transparência")}
+              >Transparência 
+              </h3>
+              <h3
+                className="font-bold cursor-pointer  hover:text-green-500 mb-4 "
+                onClick={() => handleItemClick("Personalização")}
+              >
+                Personalização
+              </h3>
+            </div>
+            <p className="text-neutral-950 leading-7  text-left ">
+              {texto || "Otimização contínua de processos para oferecer serviços de alta qualidade com agilidade e precisão."}
+            </p>
+          </div>
+          <div className="lg:w-1/2 flex justify-center ">
+            <img
+              src={imagemValores}
+              alt="Valores"
+              className="w-82 h-auto pl-4"
+            />
+          </div>
+        </div>
+      </div>
+  
+    );
+  }
+  const [texto, setTexto] = useState("");
+  
+    const handleClick = (valor) => {
+      switch (valor) {
+        case "Eficiência":
+          setTexto(
+            "Otimização contínua de processos para oferecer serviços de alta qualidade com agilidade e precisão."
+          );
+          break;
+        case "Inovação":
+          setTexto(
+            "Busca incessante por novas soluções sustentáveis e tecnológicas para atender e superar as expectativas dos clientes."
+          );
+          break;
+        case "Transparência":
+          setTexto(
+            "Compromisso com a clareza e honestidade nas relações com clientes, parceiros e colaboradores."
+          );
+          break;
+        case "Personalização":
+          setTexto(
+            "Entendimento profundo das necessidades de cada cliente, proporcionando soluções sustentáveis pensadas de forma exclusiva e adequada para cada necessidade."
+          );
+          break;
+        default:
+          setTexto("");
+      }
+    };
 
 
     return (
@@ -120,51 +202,59 @@ function Home() {
 
   {/* <ListaServicos/> */}
         
-  <section className="bg-green-600 py-40">
-        <div className="container mx-auto px-10 lg:px-20">
-          <div className="lg:max-w-2xl lg:flex lg:flex-col lg:items-center">
-            <div className="flex gap-x-2 items-center justify-center mb-2">
-             
-              <h2 className="text-white text-[2.9rem]">Missão</h2>
-            </div>
-            <p className="text-white text-center leading-20">
-            Proporcionar soluções eficientes e personalizadas para nossos clientes, 
-          oferecendo uma gestão de serviços de alta qualidade que atenda às necessidades 
-          específicas de cada setor de atuação. Nosso compromisso é entregar resultados que 
-          impulsionem o crescimento e a inovação, sempre focados na satisfação e no sucesso dos nossos clientes.
-            </p>
-          </div>
+  <section className="py-32">
+      <div className="container mx-auto px-10 lg:px-20 py-3">
+    <div className="lg:flex lg:items-center lg:justify-between">
+      <div className="lg:w-1/2">
+        <div className="flex gap-x-2 items-center justify-center mb-2">
+          <h2 className="text-neutral-950 text-[2.9rem] font-bold">Missão</h2>
         </div>
-        <div className="container mx-auto px-10 lg:px-20 mt-20 flex justify-end">
-          <div className="lg:max-w-2xl lg:flex-row-reverse lg:items-en lg:col-end">
-            <div className="flex gap-x-2 items-center justify-center mb-2">
-             
-              <h2 className="text-white text-[2.9rem]">Visão</h2>
-            </div>
-            <p className="text-white text-center leading-20">
-            Ser reconhecida como líder no mercado de gestão de serviços, destacando-se pela excelência no atendimento 
-          ao cliente e pela capacidade de adaptação às demandas dinâmicas do mercado. Aspiramos a ser a referência 
-          em inovação e qualidade, criando parcerias duradouras e promovendo o desenvolvimento contínuo de nossos 
-          serviços e tecnologias.
-            </p>
-          </div>
+        <p className="text-neutral-950 leading-7 py-6  text-left">
+          Proporcionar soluções eficientes e personalizadas para nossos
+          clientes, oferecendo uma gestão de serviços de alta qualidade que
+          atenda às necessidades específicas de cada setor de atuação. Nosso
+          compromisso é entregar resultados que impulsionem o crescimento e
+          a inovação, sempre focados na satisfação e no sucesso dos nossos
+          clientes.
+        </p>
+      </div>
+      <div className="lg:w-1/2 flex justify-center">
+        <img
+          src={imagemMissao}
+          alt="Missão"
+          className="w-82 h-auto" // ajuste o tamanho da imagem conforme necessário
+        />
+      </div>
+    </div>
+  </div>
+
+  <div className="container mx-auto px-10 lg:px-20 mt-20 py-3">
+    <div className="lg:flex lg:items-center lg:justify-between">
+      <div className="lg:w-1/2 flex justify-center">
+        <img
+          src={imagemVisao}
+          alt="Visão"
+          className="w-82 h-auto" // ajuste o tamanho da imagem conforme necessário
+        />
+      </div>
+      <div className="lg:w-1/2">
+        <div className="flex gap-x-2 items-center justify-center mb-2">
+          <h2 className="text-neutral-950 text-[2.9rem] font-bold">Visão</h2>
         </div>
-        <div className="container mx-auto px-10 lg:px-20 mt-20">
-          <div className="lg:max-w-2xl lg:flex lg:flex-col lg:items-center mb-2">
-            <div className="flex gap-x-2 items-center justify-center">
-              
-              <h2 className="text-white text-[2.9rem]">Valores</h2>
-              
-            </div>
-            <h3 > Eficiência:</h3>
-            <h3 > Inovação:</h3>
-            <h3 > Transparência:</h3>
-            <h3 >Personalização:</h3>    
-            <p className="text-white text-center leading-20">
-            </p>
-          </div>
-        </div>
-      </section> 
+        <p className="text-neutral-950 text-right leading-7 py-6 ">
+          Ser reconhecida como líder no mercado de gestão de serviços,
+          destacando-se pela excelência no atendimento ao cliente e pela
+          capacidade de adaptação às demandas dinâmicas do mercado.
+          Aspiramos a ser a referência em inovação e qualidade, criando
+          parcerias duradouras e promovendo o desenvolvimento contínuo de
+          nossos serviços e tecnologias.
+        </p>
+      </div>
+    </div>
+  </div>
+
+        <Valores handleClick={handleClick} texto={texto} />
+      </section>
 
       <Contato/>   
       </>
