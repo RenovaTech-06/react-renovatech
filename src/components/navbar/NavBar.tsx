@@ -26,7 +26,7 @@ function Navbar() {
       navBarComponent = (
         
         <div className='w-full bg-green-700 text-white flex justify-center py-4'>
-          <div className="container flex justify-between text-lg">
+          <div className="grid grid-flow-col">
             <img
               className="h-8 mr-3"
               src={logoBranco}
