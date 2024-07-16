@@ -80,13 +80,13 @@ function DeletarSetorAtuacao() {
                 </div>
                 <div className='mt-8 flex gap-4'>
                         <button 
-                            className='flex-1 bg-red-500 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transform transition-transform'
+                            className='flex-1 bg-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-green-600 hover:scale-105 transform transition-transform'
                             onClick={retornar}
                         >
                             Não
                         </button>
                         <button 
-                            className='flex-1 bg-indigo-500 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-indigo-600 hover:scale-105 transform transition-transform'
+                            className='flex-1 bg-red-400 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-red-700 hover:scale-105 transform transition-transform'
                             onClick={deletarSetorAtuacao}
                         >
                             Sim

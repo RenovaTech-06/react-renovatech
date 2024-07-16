@@ -39,13 +39,13 @@ function Navbar() {
         </Link> 
 
             <div className='flex gap-4'>
-              <Link to='/' className='hover:underline'>Home</Link>
-              <Link to='/servicos' className='hover:underline'>Serviços</Link>
+              <Link to='/' className='hover:underline font-semibold underline-offset-4'>Home</Link>
+              <Link to='/servicos' className='hover:underline font-semibold underline-offset-4'>Serviços</Link>
               
-              <Link to='/setoratuacao' className='hover:underline'>Setor de Atuação</Link>
-              <Link to='/cadastroSetorAtuacao' className='hover:underline'>Cadastrar Setor</Link>
-              <Link to='/perfil' className='hover:underline'>Perfil</Link>
-              <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
+              <Link to='/setoratuacao' className='hover:underline font-semibold underline-offset-4'>Setor de Atuação</Link>
+              <Link to='/cadastroSetorAtuacao' className='hover:underline font-semibold underline-offset-4'>Cadastrar Setor</Link>
+              <Link to='/perfil' className='hover:underline font-semibold underline-offset-4'>Perfil</Link>
+              <Link to='' onClick={logout} className='hover:underline font-semibold underline-offset-4'>Sair</Link>
             </div>
           </div>
         </div>
@@ -70,10 +70,10 @@ function Navbar() {
         
 
           <div className='flex gap-4'>
-            <Link to='/' className='hover:underline'>Home</Link>
-            <Link to='/servicos' className='hover:underline'>Serviços</Link>
-            <Link to='/login' className='hover:underline'>Entrar</Link>
-            <Link to='/cadastro' className='hover:underline'>Cadastro</Link>
+            <Link to='/' className='hover:underline font-semibold underline-offset-4 '>Home</Link>
+            <Link to='/servicos' className='hover:underline font-semibold underline-offset-4'>Serviços</Link>
+            <Link to='/login' className='hover:underline font-semibold underline-offset-4'>Entrar</Link>
+            <Link to='/cadastro' className='hover:underline font-semibold underline-offset-4'>Cadastro</Link>
           </div>
         </div>
       </div>

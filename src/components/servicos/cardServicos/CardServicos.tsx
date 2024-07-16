@@ -45,7 +45,7 @@ function CardServicos({ post }: CardServicoProps) {
 		<div className="absolute top-2 right-2 flex space-x-2">
         <Link
           to={`/editarServico/${post.id}`}
-          className="text-slate-100 bg-purple-400 hover:bg-purple-800 rounded-full flex items-center justify-center w-8 h-8"
+          className="text-slate-100 bg-green-600 hover:bg-green-900 rounded-full flex items-center justify-center w-8 h-8"
         >
           <span className="sr-only">Editar</span>
           <Pencil size={18} weight="fill" />

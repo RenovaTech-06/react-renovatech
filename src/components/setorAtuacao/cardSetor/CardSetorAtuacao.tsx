@@ -31,7 +31,7 @@ function CardSetorAtuacao({ setorAtuacao }: CardSetorAtuacaoProps) {
       <div className="absolute top-2 right-2 flex space-x-2">
         <Link
           to={`/editarSetorAtuacao/${setorAtuacao.id}`}
-          className="text-slate-100 bg-purple-400 hover:bg-purple-800 rounded-full flex items-center justify-center w-8 h-8"
+          className="text-black bg-green-300 hover:bg-green-600 rounded-full flex items-center justify-center w-8 h-8"
         >
           <span className="sr-only">Editar</span>
           <Pencil size={18} weight="fill" />

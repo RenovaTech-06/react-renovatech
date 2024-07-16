@@ -75,18 +75,18 @@ function DeletarServico() {
           <p className='text-center text-lg font-medium mb-6 text-gray-700'>Você tem certeza de que deseja apagar o Serviço a seguir?</p>
           <div className='bg-red-50 p-6 rounded-lg border border-red-500'>
             <header className='text-2xl font-semibold text-red-600'>{cliente.razaoSocial}</header>
-            <p className='mt-2 font-bold text-gray-600'>{servico.contato}</p>
+            <p className='mt-2 font-bold text-red-600'>{servico.contato}</p>
             <p className='mt-2 text-gray-600'>{servico.descricao}</p>
           </div>
           <div className='mt-8 flex gap-4'>
                         <button 
-                            className='flex-1 bg-red-500 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transform transition-transform'
+                            className='flex-1 bg-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-green-600 hover:scale-105 transform transition-transform'
                             onClick={retornar}
                         >
                             Não
                         </button>
                         <button 
-                            className='flex-1 bg-indigo-500 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-indigo-600 hover:scale-105 transform transition-transform'
+                            className='flex-1 bg-red-400 text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:bg-red-700 hover:scale-105 transform transition-transform'
                             onClick={deletarServico}
                         >
                             Sim

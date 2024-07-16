@@ -26,8 +26,8 @@ function Sobre() {
   return (
     <div className="bg-gradient-to-br from-green-200 to-white flex flex-col items-center justify-center min-h-screen p-4">
       <div className="max-w-4xl text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Sobre Nossa Equipe</h1>
-        <p className="text-lg text-gray-700">
+        <h1 className="text-4xl font-bold text-green-700 mb-4">Sobre Nossa Equipe</h1>
+        <p className="text-lg font-semibold text-gray-700">
           Nossa equipe é formada por desenvolvedores engajados, comprometidos e recém-formados pela Generation Brasil. Juntos, transformamos códigos em soluções extraordinárias, combinando inovação, criatividade e dedicação para entregar resultados excepcionais.
         </p>
       </div>
