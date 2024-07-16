@@ -26,13 +26,17 @@ function Navbar() {
       navBarComponent = (
         
         <div className='w-full bg-green-700 text-white flex justify-center py-4'>
-          <div className="grid grid-flow-col">
+          <div className="container flex justify-between text-lg">
+          <Link to='/' className="">
+          <div className='grid grid-flow-col'>
             <img
-              className="h-8 mr-3"
-              src={logoBranco}
-              alt="Renovatech logo"
-              />
-            <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
+                  className="h-8 mr-3"
+                  src={logoBranco}
+                  alt="Renovatech logo"
+                  />
+              <div className='text-2xl font-bold uppercase'>RENOVATECH</div>
+          </div>
+        </Link> 
 
             <div className='flex gap-4'>
               <Link to='/' className='hover:underline'>Home</Link>
@@ -52,7 +56,7 @@ function Navbar() {
         <div className='w-full bg-green-700 text-white flex justify-center py-4'>
         <div className="container flex justify-between text-lg">
         
-        <Link to='/' className="flex items-center">
+        <Link to='/' className="">
           <div className='grid grid-flow-col'>
             <img
                   className="h-8 mr-3"
