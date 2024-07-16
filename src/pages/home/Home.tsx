@@ -199,8 +199,6 @@ function Home() {
       )}
       </Swiper>
   </div>
-
-  {/* <ListaServicos/> */}
         
   <section className="py-32">
       <div className="container mx-auto px-10 lg:px-20 py-3">
