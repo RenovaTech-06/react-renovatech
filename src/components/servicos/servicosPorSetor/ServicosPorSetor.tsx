@@ -59,7 +59,7 @@ function ServicosPorSetor() {
                   <div className="w-full max-w-md mx-4 md:mx-0">
                     <div className="max-w-md mx-auto text-center bg-white bg-opacity-90">
                       <h1 className="text-4xl font-bold text-gray-800 mb-6">Ainda não há serviços neste setor!</h1>
-                      <p className="text-lg text-gray-600 mb-8">Seja o primeiro em impulsionar e liderar em <span className='text-xl font-bold text-green-700'>{setor.nome}</span>.</p>
+                      <p className="text-2xl text-gray-600 mb-8">Seja o primeiro em impulsionar e liderar em <span className='text-2xl font-bold text-green-700'>{setor.nome}</span>.</p>
                     
                     <div>
                       <ModalServico />
