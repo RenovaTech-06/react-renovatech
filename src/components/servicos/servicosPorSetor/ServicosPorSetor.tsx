@@ -61,9 +61,9 @@ function ServicosPorSetor() {
                       <h1 className="text-4xl font-bold text-gray-800 mb-6">Ainda não há serviços neste setor!</h1>
                       <p className="text-2xl text-gray-600 mb-8">Seja o primeiro em impulsionar e liderar em <span className='text-2xl font-bold text-green-700'>{setor.nome}</span>.</p>
                     
-                    <div>
+                    {/* <div>
                       <ModalServico />
-                    </div>
+                    </div> */}
                     
                   </div>
                 </div>
@@ -86,7 +86,7 @@ function ServicosPorSetor() {
                       <h2 className="text-3xl font-bold text-green-700 mb-10">Serviços do Setor <span>{setor.nome}</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {setor.servicos?.map((servico) => (
-                    <CardServicos key={servico.id} post={servico} />
+                    <CardServicos key={servico.id} post={servico} setor={setor} />
                   ))}
                 </div>
               </div>

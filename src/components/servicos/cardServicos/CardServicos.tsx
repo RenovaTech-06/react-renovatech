@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import Servicos from '../../../models/Servicos';
 import { Pencil, Trash } from '@phosphor-icons/react';
 import { AuthContext } from '../../../contexts/AuthContext';
+import SetorAtuacao from '../../../models/SetorAtuacao';
 
 interface CardServicoProps {
   post: Servicos;
+  setor?: SetorAtuacao
 }
 
-function CardServicos({ post }: CardServicoProps) {
+function CardServicos({ post, setor }: CardServicoProps) {
   const [expandedPostId, setExpandedPostId] = useState<number | null>(null);
   const { cliente, handleLogout } = useContext(AuthContext);
 
@@ -33,7 +35,7 @@ function CardServicos({ post }: CardServicoProps) {
     	<div className="p-6">
       	<h4 className="text-lg font-semibold text-gray-700">{post.contato}</h4>
       	<p className={`mt-2 text-gray-600 ${isExpanded ? '' : 'line-clamp-3'}`}>{post.descricao}</p>
-      	<p className="mt-2 text-gray-600"><span className='font-bold text-green-700'>Setor de Atuação:</span> {post.setorAtuacao?.nome}</p>
+      	<p className="mt-2 text-gray-600"><span className='font-bold text-green-700'>Setor de Atuação:</span> {setor !== undefined ? setor.nome : post.setorAtuacao?.nome}</p>
       	<button onClick={() => toggleReadMore(post.id)} className="mt-2 text-green-700 font-semibold hover:underline">
         	{isExpanded ? 'Ver menos' : 'Ver mais...'}
       	</button>
