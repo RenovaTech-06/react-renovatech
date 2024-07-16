@@ -143,12 +143,11 @@ function Home() {
             <img
               src={logo}
               alt="logo"
-              className="mb-4 h-92  mx-auto md:mx-0"
+              className="mb-4 h-95  mx-auto md:mx-0"
             />
             <div className='container max-w- md:mr-0'>
               <p className=" mb-2 text-5xl text-white font-bold">Impulsionando Inovação</p>
               <p className="mb-4 text-5xl text-white font-bold">Sustentável</p>
-              {/* <p className="mb-4 text-2xl text-white font-bold">Junte-se a nós para criar soluções verdes e inovadoras</p> */}
             </div>
           </div>
         </div>

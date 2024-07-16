@@ -32,7 +32,7 @@ function Footer() {
                                   <h2 className="mb-6 text-sm font-semibold uppercase text-white">Social Midias</h2>
                                   <ul className="text-white font-medium">
                                       <li className="mb-4">
-                                          <a href="https://github.com/RenovaTech-06" target='_blank' className="hover:underline ">Renovatech</a>
+                                          <a href="https://linktr.ee/renansramos" target='_blank' className="hover:underline ">Renovatech</a>
                                       </li>
                                       <li>
                                           <Link to='/sobre' className="hover:underline">Desenvolvedores</Link>
