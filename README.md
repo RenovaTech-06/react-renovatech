@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="./src/assets/logosrenovatechwhite.png" height="450" width="1000"/>
+	<img src="./src/assets/logosrenovatechwhite.png" height="600" width="600"/>
 </h1>
 
 ---
